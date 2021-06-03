@@ -56,8 +56,10 @@ function loadPage(){
             for(var i = 0; i < 4; i++){
                 const li = document.createElement("li");
                 li.classList.add("weather")
-
-                day = day > 6 ?  0 : day + 1;
+                ++day;
+                if(day > 6){
+                    day = 0;
+                }
                 const weatherIcon = `http://openweathermap.org/img/wn/${((daily[i])["weather"])[0]["icon"]}@2x.png`
                 const dailyInfo = `
                     <img src=${weatherIcon} alt="weather">
