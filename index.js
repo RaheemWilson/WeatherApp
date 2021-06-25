@@ -16,6 +16,8 @@ const parishCoordinates = {
 
 }
 
+const button = document.getElementById('home-button')
+
 function processInfo(){
     const e = document.getElementById("parish");
     const location = e.options[e.selectedIndex].value;
@@ -99,36 +101,3 @@ function loadPage(latitude, longitude, location){
 
         })
 }
-
-
-// localStorage.getItem(parish)
-//         .then(coords => {
-//            const { latitude, longitude } = coords;
-//            loadPage(latitude, longitude)
-//         })
-//         .catch(error => {
-
-//             const parishApiKey = "8d8b8e427afd3af726a82f704daa5a06"
-
-//             const parishURL = `http://api.positionstack.com/v1/forward
-//                                 ?access_key=${parishApiKey}
-//                                 &query=${parish}, Jamaica
-//                                 &country=JM
-//                                 &limit=1`
-
-//             fetch(parishURL)
-//                 .then(res => {
-//                     const results = res['data']['results'][0]
-                    
-//                     const lat = results['latitude']
-//                     const long = results['longitude']
-
-//                     localStorage.setItem(parish, { latitude : lat, longitude : long })
-
-//                     loadPage(lat, long)
-//                 })
-//                 .catch(error => {
-//                     console.log(error)
-//                 })
-
-        // })
